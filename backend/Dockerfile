@@ -1,12 +1,9 @@
-FROM node:22
+FROM node:22-slim
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY . .
 RUN npm install
 
-COPY . .
 
-EXPOSE 8000
-
-CMD ["node", "app.js"]  
+ENTRYPOINT ["node", "src/app.js"]

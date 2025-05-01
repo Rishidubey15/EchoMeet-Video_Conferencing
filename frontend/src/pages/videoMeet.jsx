@@ -14,7 +14,8 @@ import StopScreenShareIcon from "@mui/icons-material/StopScreenShare";
 import ChatIcon from "@mui/icons-material/Chat";
 import { AuthContext } from "../contexts/AuthContext";
 
-const server_url = "http://localhost:8000";
+const server_url = (import.meta.env.VITE_SERVER_URI || "http://localhost:8000");
+
 var connections = {};
 const peerConfigConnections = {
   iceServers: [{ urls: "stun:stun.l.google.com:19302" }],
